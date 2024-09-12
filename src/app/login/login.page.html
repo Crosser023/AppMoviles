@@ -1,0 +1,24 @@
+<ion-content>
+  <div class="login-container">
+    <img src="assets/icon/logoAppMovil.png" class="logo" alt="Logo" />
+    
+    <form (ngSubmit)="login()">
+      <ion-item lines="none">
+        <ion-input type="email" placeholder="Correo electrónico" [(ngModel)]="email" name="email" required></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-input type="password" placeholder="Contraseña" [(ngModel)]="password" name="password" required></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" type="submit" color="primary">Iniciar sesión</ion-button>
+      
+      <ion-text color="medium">
+        <small (click)="goToRegister()">¿No tienes cuenta? Regístrate</small>
+      </ion-text>
+
+      <!-- Mensaje de error al fallar el login -->
+      <p *ngIf="showError" style="color: red;">{{ errorMessage }}</p>
+    </form>
+  </div>
+</ion-content>
